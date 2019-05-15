@@ -89,22 +89,22 @@ function displayItems() {
  });
 }
 
-// function nextStep() {
-//     inquirer
-//       .prompt({
-//         name: "shopOrExit",
-//         type: "list",
-//         message: "Would you like to [Keep Shopping] or [Exit] ?",
-//         choices: ["Keep Shopping", "EXIT"]
-//       })
-//       .then(function(answer) {
-//         // based on their answer, either call the displayItem function or exit the app
-//         if (answer.shopOrExit === "Keep Shopping") {
-//           displayItems();
-//         }
-//         else if(answer.shopOrExit === "Exit") {
-//         connection.end();
-//         } 
-//       });
-//   }
+function nextStep() {
+    inquirer
+      .prompt({
+        name: "shopOrExit",
+        type: "list",
+        message: "Would you like to [Keep Shopping] or [Exit] ?",
+        choices: ["Keep Shopping", "EXIT"]
+      })
+      .then(function(answer) {
+        // based on their answer, either call the displayItem function or exit the app
+        if (answer.shopOrExit === "Keep Shopping") {
+          displayItems();
+        }
+        else if(answer.shopOrExit === "Exit") {
+        connection.end();
+        } 
+      });
+  }
 

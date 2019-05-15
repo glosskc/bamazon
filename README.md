@@ -2,7 +2,7 @@
 ##Amazon-like store front
 Basic Online Storefront app that allows one to select products by ID 
 Then user can select quantity
-![screenshot of CLI](/pic1.png)
+![screenshot of CLI](/Pic1.png)
 Format: ![Alt Text](url)
 
 ##Checkout

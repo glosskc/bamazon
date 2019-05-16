@@ -64,7 +64,7 @@ function displayItems() {
                 
                     if (selectQty <= results[index].stock_quantity) {
                         let remainingQty = results[index].stock_quantity - answer.quantity;
-                        console.log(remainingQty);
+                        // console.log(remainingQty);
                         connection.query(`UPDATE auctions SET ? WHERE ?`,
                         [
                           {
@@ -78,10 +78,10 @@ function displayItems() {
                             if (err) throw err;
                             console.log(`You purchased ${selectQty} of ${productName} and your total cost was $${purchaseCost}. Thank you for shopping at Bamazon! Only ${remainingQty} left!`);
                         });
-                        // nextStep();
+                        nextStep();
                         
                     } else if (selectQty > results[index].stock_quantity) {
-                        console.log(`Sorry this item is out of stock! Please pick a different item or quantity. There is only ${remainingQty} of ${productName}`);
+                        console.log(`Sorry this item is out of stock! Please pick a different item or quantity. There is only ${results[index].stock_quantity} of ${productName}`);
                         displayItems();
                     };
     
